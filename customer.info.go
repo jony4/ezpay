@@ -75,7 +75,7 @@ func (e *EZCustomerInfo) String() string {
 }
 
 func (c *Client) CustomerInfo(ctx context.Context, request *EZCustomerInfoRequest) (*EZCustomerInfo, error) {
-	resp, err := c.call(ctx, APICustomerInfo, request)
+	resp, err := c.Call(ctx, APICustomerInfo, request)
 	if err != nil {
 		return nil, err
 	}

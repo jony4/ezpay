@@ -51,7 +51,7 @@ const (
 )
 
 func (c *Client) RedeemCodeExchange(ctx context.Context, request *RedeemCodeExchangeRequest) (*RedeemCodeExchangeResult, error) {
-	resp, err := c.call(ctx, APIRedeemCodeExchange, request)
+	resp, err := c.Call(ctx, APIRedeemCodeExchange, request)
 	if err != nil && !errors.Is(err, ErrFailedResponse) {
 		return nil, err
 	}

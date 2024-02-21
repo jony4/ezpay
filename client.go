@@ -95,7 +95,7 @@ func (c *Client) encodeToken(payload map[string]interface{}) (string, error) {
 	return signed, nil
 }
 
-func (c *Client) call(ctx context.Context, api string, params interface{}) (interface{}, error) {
+func (c *Client) Call(ctx context.Context, api string, params interface{}) (interface{}, error) {
 	payload := map[string]interface{}{
 		"method": api,
 		"params": params,

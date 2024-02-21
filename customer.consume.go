@@ -30,7 +30,7 @@ type ConsumeResult struct {
 }
 
 func (c *Client) Consume(ctx context.Context, request *ConsumeRequest) (*ConsumeResult, error) {
-	resp, err := c.call(ctx, APICustomerConsume, request)
+	resp, err := c.Call(ctx, APICustomerConsume, request)
 	if err != nil {
 		return nil, err
 	}
