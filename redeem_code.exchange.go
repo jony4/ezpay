@@ -21,9 +21,9 @@ type RedeemCodeExchangeRequest struct {
 
 // RedeemCodeExchangeResult redeem_code.exchange
 type RedeemCodeExchangeResult struct {
-	ProjectId string  `json:"project_id"` // 项目ID
-	Value     string  `json:"value"`      // 兑换码
-	Product   Product `json:"product"`    // 兑换商品信息
+	ProjectId string   `json:"project_id"` // 项目ID
+	Value     string   `json:"value"`      // 兑换码
+	Product   *Product `json:"product"`    // 兑换商品信息
 }
 
 type Product struct {
