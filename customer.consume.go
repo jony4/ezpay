@@ -13,13 +13,20 @@ const (
 
 // ConsumeRequest customer.consume
 type ConsumeRequest struct {
-	CustomerID   string `json:"customer_id"`    // 艺爪系统用户ID
-	EquityID     string `json:"equity_id"`      // 权益ID
-	Amount       int64  `json:"amount"`         // 数量
-	Title        string `json:"title"`          // 标题
-	ChangeType   int    `json:"change_type"`    // 变更类型枚举值
-	BalanceLogID string `json:"balance_log_id"` // 最后一次余额更新日志ID
+	CustomerID   string     `json:"customer_id"`    // 艺爪系统用户ID
+	EquityID     string     `json:"equity_id"`      // 权益ID
+	Amount       int64      `json:"amount"`         // 数量
+	Title        string     `json:"title"`          // 标题
+	ChangeType   ChangeType `json:"change_type"`    // 变更类型枚举值
+	BalanceLogID string     `json:"balance_log_id"` // 最后一次余额更新日志ID
 }
+
+type ChangeType int
+
+const (
+	ChangeTypeCONSUMABLE_EXPENSE ChangeType = 16
+	ChangeTypeCONSUMABLE_INCOME  ChangeType = 17
+)
 
 // ConsumeResult customer.consume
 type ConsumeResult struct {
